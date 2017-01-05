@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CLISH_MODULE xmlns="http://clish.sourceforge.net/XMLSchema" 
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+ xsi:schemaLocation="http://clish.sourceforge.net/XMLSchema
+                     http://clish.sourceforge.net/XMLSchema/clish.xsd">
+   <VIEW name="osu-view"
+            prompt="${SYSTEM_NAME}(OSU slot[${nameId}])# ">
+<!--
+     <PTYPE name="MODE_NAME"
+            method="select"
+            pattern="auto(1) L1channel(2) L2channel(3)"
+            help="mode the set"/>
+
+     <PTYPE name="BACK_MODE"
+            method="select"
+            pattern="auto(1) manual(2)"
+            help="return mode"/>            
+    -->         
+       <!--=======================================================-->
+            
+        <COMMAND name="show"
+                 help="Show the named view details">
+            <ACTION builtin="clish_osu_system"/>
+        </COMMAND>
+     <COMMAND name="setosuport"
+             help="set slot info for system">
+        <PARAM name="name"
+               help="port index"
+              ptype="FPORT"/>             
+        <PARAM name="distance"
+               help="Set port distance"
+              ptype="UINT"/>
+        <PARAM name="maxrate"
+               help="Set port maxrate"
+              ptype="UINT"/>
+        <PARAM name="wavelength"
+               help="Set port wavelength"
+              ptype="UINT"/>         
+        <ACTION builtin="shell_setosuport_info">${name} ${distance} ${maxrate} ${wavelength}</ACTION>
+    </COMMAND>            
+     <COMMAND name="setotuinfo"
+             help="Set slot info for system">
+        <PARAM name="name"
+               help="name"
+              ptype="STRING"/>             
+        <ACTION builtin="shell_setotu_extern">${name}</ACTION>
+    </COMMAND>        
+
+
+
+      
+        <COMMAND name="exit"
+                 help="Exit the named view"
+                 view="enable-view"/>
+    </VIEW>
+</CLISH_MODULE>

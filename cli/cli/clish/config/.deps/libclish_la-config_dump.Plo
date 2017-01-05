@@ -1,0 +1,14 @@
+clish/config/libclish_la-config_dump.lo: clish/config/config_dump.c \
+ lub/dump.h \
+ /home/bobo/buildroot-2012.08/output/host/usr/lib/gcc/arm-unknown-linux-uclibcgnueabi/4.5.4/include/stdarg.h \
+ clish/config/private.h clish/config.h lub/types.h
+
+lub/dump.h:
+
+/home/bobo/buildroot-2012.08/output/host/usr/lib/gcc/arm-unknown-linux-uclibcgnueabi/4.5.4/include/stdarg.h:
+
+clish/config/private.h:
+
+clish/config.h:
+
+lub/types.h:

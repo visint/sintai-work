@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CLISH_MODULE xmlns="http://clish.sourceforge.net/XMLSchema" 
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+ xsi:schemaLocation="http://clish.sourceforge.net/XMLSchema
+                     http://clish.sourceforge.net/XMLSchema/clish.xsd">
+   <VIEW name="olp-view"
+            prompt="${SYSTEM_NAME}(OLPO slot[${nameId}])$ ">
+<!--
+     <PTYPE name="MODE_NAME"
+            method="select"
+            pattern="auto(1) L1channel(2) L2channel(3)"
+            help="mode the set"/>
+
+     <PTYPE name="BACK_MODE"
+            method="select"
+            pattern="auto(1) manual(2)"
+            help="return mode"/>            
+    -->         
+       <!--=======================================================-->
+
+     <COMMAND name="setolp"
+             help="Set slot info for system">
+        <PARAM name="name"
+               help="set pwr1 tune"
+              ptype="STRING"/>             
+        <PARAM name="perchannelnum"
+               help="set pwr2 tune"
+              ptype="STRING"/>
+        <PARAM name="porttype"
+               help="set pwr3 tune"
+              ptype="STRING"/>
+        <ACTION builtin="shell_setolp_info">${name} ${perchannelnum} ${porttype}</ACTION>
+    </COMMAND>       
+            
+        <COMMAND name="show"
+                 help="Show the named view details">
+            <ACTION builtin="clish_olpo_system"/>
+        </COMMAND>
+      
+        <COMMAND name="exit"
+                 help="Exit the named view"
+                 view="enable-view"/>
+    </VIEW>
+</CLISH_MODULE>

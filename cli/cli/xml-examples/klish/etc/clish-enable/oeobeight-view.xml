@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CLISH_MODULE xmlns="http://clish.sourceforge.net/XMLSchema" 
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+ xsi:schemaLocation="http://clish.sourceforge.net/XMLSchema
+                     http://clish.sourceforge.net/XMLSchema/clish.xsd">
+   <VIEW name="oeobeight-view"
+            prompt="${SYSTEM_NAME}(OEOE slot[${nameId}])# ">
+     
+       <!--=======================================================-->
+            
+        <COMMAND name="show"
+                 help="Show the named view details">
+            <ACTION builtin="clish_otueight_system"/>
+        </COMMAND>
+
+ 		<COMMAND name="set"
+			help="Set OEO information"/>
+<!--
+     <COMMAND name="setspeed"
+             help="Set slot info for system">
+        <PARAM name="name"
+                   help="port id"
+                   ptype="EIGHTPORT"/>
+        <PARAM name="sn"
+               help="Set portspeed"
+              ptype="FSPEED"/>
+        <ACTION builtin="shell_otu_setspeed">${name} ${sn}</ACTION>
+    </COMMAND> 	
+
+
+    
+     <COMMAND name="setloopback"
+             help="Set slot info for system">
+        <PARAM name="name"
+                   help="port id"
+                   ptype="EIGHTPORT"/>
+        <PARAM name="ttt"
+               help="Set loopback"
+              ptype="NSTATE"/>
+        <ACTION builtin="shell_otu_setloopback">${name} ${ttt}</ACTION>
+    </COMMAND> 	
+ !-->            
+     <COMMAND name="setddm"
+             help="Set slot ddm for otu">
+        <PARAM name="name"
+                   help="port id"
+                   ptype="EIGHTPORT"/>
+        <PARAM name="rxPowerMin"
+               help="Set ddm rx Power Min"
+              ptype="DDMPOWERMIN"/>
+        <PARAM name="rxPowerMax"
+               help="Set ddm rx Power Max"
+              ptype="DDMPOWERMAX"/>
+        <PARAM name="txPowerMin"
+               help="Set ddm tx Power Min"
+              ptype="DDMPOWERMIN"/>
+        <PARAM name="txPowerMax"
+               help="Set ddm tx Power Max"
+              ptype="DDMPOWERMAX"/>
+        <PARAM name="tempMin"
+               help="Set ddm temp Min"
+              ptype="DDMTEMPMIN"/> 
+        <PARAM name="tempMax"
+               help="Set ddm temp Max"
+              ptype="DDMTEMPMAX"/>                
+        <PARAM name="voltMin"
+               help="Set ddm volt Min"
+              ptype="DDMVOLTMIN"/>
+        <PARAM name="voltMax"
+               help="Set ddm volt Max"
+              ptype="DDMVOLTMAX"/>
+        <PARAM name="txBiasMin"
+               help="Set ddm tx Bias Min"
+              ptype="DDMBIASMIN"/> 
+        <PARAM name="txBiasMax"
+               help="Set ddm tx Bias Max"
+              ptype="DDMBIASMAX"/> 
+        <ACTION builtin="shell_otu_setddm">${name} ${rxPowerMin} ${rxPowerMax} ${txPowerMin} ${txPowerMax} ${tempMin} ${tempMax} ${voltMin} ${voltMax} ${txBiasMin} ${txBiasMax}</ACTION>
+    </COMMAND> 	    
+<!--    
+     <COMMAND name="setprbs"
+             help="set slot info for system">
+        <PARAM name="name"
+                   help="port id"
+                   ptype="FPORT"/>
+        <PARAM name="ttt"
+               help="Set prbs"
+              ptype="FSTATE"/>
+        <ACTION builtin="shell_otu_setprbs">${name} ${ttt}</ACTION>
+    </COMMAND> 	
+    
+    <COMMAND name="setfec"
+             help="set slot info for system">
+        <PARAM name="name"
+                   help="port id"
+                   ptype="FPORT"/>
+        <PARAM name="ttt"
+               help="Set fec"
+              ptype="FIBERSTATE"/>
+        <ACTION builtin="shell_otu_setfec">${name} ${ttt}</ACTION>
+    </COMMAND> 		
+-->    
+        
+    
+     <COMMAND name="setfibersend"
+             help="Set slot info for system">
+        <PARAM name="name"
+                   help="Port id"
+                   ptype="EIGHTPORT"/>
+        <PARAM name="ttt"
+               help="Set fibersend"
+              ptype="FSTATE"/>
+        <ACTION builtin="shell_otu_setfibersend">${name} ${ttt}</ACTION>
+    </COMMAND> 
+    
+
+
+    
+		<COMMAND name="set name"
+			help="Set name">
+			<PARAM name="value"
+                   help="The value"
+                   ptype="STRING"/>  
+		    <ACTION  builtin="shell_dev_set_name">${value}</ACTION>  		                   
+ 		</COMMAND> 
+ 		
+		<COMMAND name="set location"
+			help="Set location">
+			<PARAM name="value"
+                   help="The value"
+                   ptype="STRING"/>  
+		    <ACTION  builtin="shell_dev_set_location">${value}</ACTION>  		                   
+ 		</COMMAND> 
+
+		<COMMAND name="set contact"
+			help="Set contact">
+			<PARAM name="value"
+                   help="The value"
+                   ptype="STRING"/>  
+		    <ACTION  builtin="shell_dev_set_contact">${value}</ACTION>  		                   
+ 		</COMMAND> 
+ 		
+		<COMMAND name="set updev"
+			help="Set up device">
+			<PARAM name="value"
+                   help="The value"
+                   ptype="STRING"/>  
+		    <ACTION  builtin="shell_dev_set_updev">${value}</ACTION>  		                   
+ 		</COMMAND> 
+
+
+		<COMMAND name="set userdata"
+			help="Set user data">
+			<PARAM name="value"
+                   help="The value"
+                   ptype="STRING"/>  
+		    <ACTION  builtin="shell_dev_set_userdata">${value}</ACTION>  		                   
+ 		</COMMAND> 
+
+
+		<COMMAND name="set service"
+			help="Set service">
+			<PARAM name="value"
+                   help="The value"
+                   ptype="STRING"/>  
+		    <ACTION  builtin="shell_dev_set_service">${value}</ACTION>  		                   
+ 		</COMMAND> 
+
+        <COMMAND name="exit"
+                 help="Exit the named view"
+                 view="enable-view"/>
+    </VIEW>
+</CLISH_MODULE>

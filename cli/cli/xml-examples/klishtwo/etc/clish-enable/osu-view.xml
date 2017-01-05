@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CLISH_MODULE xmlns="http://clish.sourceforge.net/XMLSchema" 
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+ xsi:schemaLocation="http://clish.sourceforge.net/XMLSchema
+                     http://clish.sourceforge.net/XMLSchema/clish.xsd">
+   <VIEW name="osu-view"
+            prompt="${SYSTEM_NAME}(OSU slot[${nameId}])# ">
+<!--
+     <PTYPE name="MODE_NAME"
+            method="select"
+            pattern="auto(1) L1channel(2) L2channel(3)"
+            help="mode the set"/>
+
+     <PTYPE name="BACK_MODE"
+            method="select"
+            pattern="auto(1) manual(2)"
+            help="return mode"/>            
+    -->         
+       <!--=======================================================-->
+            
+        <COMMAND name="show"
+                 help="Show the named view details">
+            <ACTION builtin="clish_osu_system"/>
+        </COMMAND>
+
+ 		<COMMAND name="set"
+			help="Set OSU information"/>
+
+
+    	<COMMAND name="set name"
+			help="Set name">
+			<PARAM name="value"
+                   help="The value"
+                   ptype="STRING"/>  
+		    <ACTION  builtin="shell_dev_set_name">${value}</ACTION>  		                   
+ 		</COMMAND> 
+ 		
+		<COMMAND name="set location"
+			help="Set location">
+			<PARAM name="value"
+                   help="The value"
+                   ptype="STRING"/>  
+		    <ACTION  builtin="shell_dev_set_location">${value}</ACTION>  		                   
+ 		</COMMAND> 
+
+		<COMMAND name="set contact"
+			help="Set contact">
+			<PARAM name="value"
+                   help="The value"
+                   ptype="STRING"/>  
+		    <ACTION  builtin="shell_dev_set_contact">${value}</ACTION>  		                   
+ 		</COMMAND> 
+ 		
+		<COMMAND name="set updev"
+			help="Set up device">
+			<PARAM name="value"
+                   help="The value"
+                   ptype="STRING"/>  
+		    <ACTION  builtin="shell_dev_set_updev">${value}</ACTION>  		                   
+ 		</COMMAND> 
+
+
+		<COMMAND name="set userdata"
+			help="Set user data">
+			<PARAM name="value"
+                   help="The value"
+                   ptype="STRING"/>  
+		    <ACTION  builtin="shell_dev_set_userdata">${value}</ACTION>  		                   
+ 		</COMMAND> 
+
+
+		<COMMAND name="set service"
+			help="Set service">
+			<PARAM name="value"
+                   help="The value"
+                   ptype="STRING"/>  
+		    <ACTION  builtin="shell_dev_set_service">${value}</ACTION>  		                   
+ 		</COMMAND> 
+
+      
+        <COMMAND name="exit"
+                 help="Exit the named view"
+                 view="enable-view"/>
+    </VIEW>
+</CLISH_MODULE>

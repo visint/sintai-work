@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CLISH_MODULE xmlns="http://clish.sourceforge.net/XMLSchema" 
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+ xsi:schemaLocation="http://clish.sourceforge.net/XMLSchema
+                     http://clish.sourceforge.net/XMLSchema/clish.xsd">
+<VIEW name="enable-view">
+    <!--=======================================================-->
+    <PTYPE name="TIME_HHMMSS"
+        pattern="(([0-1][0-9]|[2][0-3]):[0-5][0-9]:[0-5][0-9])"
+          help="HH:MM:SS using 24 hour clock"/>
+    <!--=======================================================-->
+    <PTYPE name="TZ_OFFSET_HR"
+         method="integer"
+        pattern="-12..12"
+           help="Time offset from UTC"/>
+       <!--=======================================================-->
+       <PTYPE name="DAY_MONTH"
+            method="integer"
+           pattern="0..31"
+              help="Calendar day of month"/>
+       <!--=======================================================-->
+       <PTYPE name="MONTH_NAME"
+            method="select"
+           pattern="1(1) 2(2) 3(3) 4(4) 5(5) 6(6) 7(7) 8(8) 9(9) 10(10) 11(11) 12(12)"
+              help="Month of the year"/>
+       <!--=======================================================-->
+       <PTYPE name="TZ_NAME"
+            method="select"
+           pattern="GMT(GreenwichMeanTime) PST(PacificStandardTime) EST(EasternStandardTime)"
+              help="Timezone Name" />
+       <!--=======================================================-->
+       <PTYPE name="YYYY_YEAR"
+            method="integer"
+           pattern="1993..2035"
+              help="Year"/>
+    <!--=======================================================-->
+   <COMMAND name="time"
+            help="Utility commands for time related details"/>
+   <!--=======================================================-->
+   <COMMAND name="time set"
+            help="Set the time and date">
+       <PARAM name="year"
+              help="Year"
+              ptype="YYYY_YEAR"/>   
+       <PARAM name="month"
+              help="Month of year"
+              ptype="MONTH_NAME"/>  
+       <PARAM name="day"
+              help="Day of the month"
+              ptype="DAY_MONTH"/>
+       <PARAM name="time"
+              help="Current time"
+              ptype="TIME_HHMMSS"/>
+        <ACTION  builtin="shell_set_time">${year} ${month} ${day} ${time}</ACTION>
+   </COMMAND>
+   <!--=======================================================-->    
+<!--   
+   <COMMAND name="time timezone"
+            help="Set the timezone">
+        <PARAM name="zone"
+               help="The time zone"
+              ptype="TZ_NAME"/>
+        <PARAM name="hours"
+               help="The offset from the UTC"
+               ptype="TZ_OFFSET_HR"/>
+       <ACTION>echo TIMEZONE zone: ${zone} hours:${hours}</ACTION>
+   </COMMAND>
+-->   
+   <!--=======================================================-->    
+   </VIEW>
+</CLISH_MODULE>

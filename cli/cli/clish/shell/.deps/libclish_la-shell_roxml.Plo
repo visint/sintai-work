@@ -1,0 +1,4 @@
+clish/shell/libclish_la-shell_roxml.lo: clish/shell/shell_roxml.c \
+ config.h
+
+config.h:

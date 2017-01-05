@@ -1,0 +1,4 @@
+clish/shell/libclish_la-shell_libxml2.lo: clish/shell/shell_libxml2.c \
+ config.h
+
+config.h:

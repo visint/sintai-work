@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CLISH_MODULE xmlns="http://clish.sourceforge.net/XMLSchema" 
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+ xsi:schemaLocation="http://clish.sourceforge.net/XMLSchema
+                     http://clish.sourceforge.net/XMLSchema/clish.xsd">
+   <VIEW name="atten-view"
+            prompt="${SYSTEM_NAME}(ATTEN slot[${nameId}])# ">
+<!--
+     <PTYPE name="MODE_NAME"
+            method="select"
+            pattern="auto(1) L1channel(2) L2channel(3)"
+            help="mode the set"/>
+
+     <PTYPE name="BACK_MODE"
+            method="select"
+            pattern="auto(1) manual(2)"
+            help="return mode"/>            
+    -->         
+       <!--=======================================================-->
+            
+        <COMMAND name="show"
+                 help="Show the named view details">
+            <ACTION builtin="clish_olp_system"/>
+        </COMMAND>
+
+ 		<COMMAND name="set"
+			help="Set ATTEN information"/>
+
+		<COMMAND name="set mode"
+			help="Set ATTEN mode"/>	
+
+		<COMMAND name="set mode auto"
+			help="Set ATTEN device to auto">
+			<ACTION  builtin="shell_olp_set_mode">auto</ACTION>  
+		</COMMAND>
+
+		<COMMAND name="set mode manual"
+			help="Set ATTEN device to manual">
+		    <ACTION  builtin="shell_olp_set_mode">manual</ACTION>  
+		</COMMAND>
+
+		<COMMAND name="set selectline"
+			help="Set ATTEN select line"/>	
+
+		<COMMAND name="set selectline L1"
+			help="Set ATTEN device select line L1">
+			<ACTION  builtin="shell_olp_set_selectline">L1</ACTION>  
+		</COMMAND>
+
+		<COMMAND name="set selectline L2"
+			help="Set ATTEN device select line L2">
+		    <ACTION  builtin="shell_olp_set_selectline">L2</ACTION>  
+		</COMMAND>
+
+		<COMMAND name="set name"
+			help="Set name">
+			<PARAM name="value"
+                   help="The value"
+                   ptype="STRING"/>  
+		    <ACTION  builtin="shell_dev_set_name">${value}</ACTION>  		                   
+ 		</COMMAND> 
+ 		
+		<COMMAND name="set location"
+			help="Set location">
+			<PARAM name="value"
+                   help="The value"
+                   ptype="STRING"/>  
+		    <ACTION  builtin="shell_dev_set_location">${value}</ACTION>  		                   
+ 		</COMMAND> 
+
+		<COMMAND name="set contact"
+			help="Set contact">
+			<PARAM name="value"
+                   help="The value"
+                   ptype="STRING"/>  
+		    <ACTION  builtin="shell_dev_set_contact">${value}</ACTION>  		                   
+ 		</COMMAND> 
+ 		
+		<COMMAND name="set updev"
+			help="Set up device">
+			<PARAM name="value"
+                   help="The value"
+                   ptype="STRING"/>  
+		    <ACTION  builtin="shell_dev_set_updev">${value}</ACTION>  		                   
+ 		</COMMAND> 
+
+
+		<COMMAND name="set userdata"
+			help="Set user data">
+			<PARAM name="value"
+                   help="The value"
+                   ptype="STRING"/>  
+		    <ACTION  builtin="shell_dev_set_userdata">${value}</ACTION>  		                   
+ 		</COMMAND> 
+
+
+		<COMMAND name="set service"
+			help="Set service">
+			<PARAM name="value"
+                   help="The value"
+                   ptype="STRING"/>  
+		    <ACTION  builtin="shell_dev_set_service">${value}</ACTION>  		                   
+ 		</COMMAND> 
+
+
+		<COMMAND name="set return-mode"
+			help="Set OLP return mode"/>
+
+        <COMMAND name="set return-mode auto"
+			help="Set OLP return mode auto">
+			<ACTION  builtin="shell_olp_set_backmode">auto</ACTION>  		
+ 		</COMMAND>
+
+  		<COMMAND name="set return-mode manual"
+			help="Set OLP return mode manual">
+			<ACTION  builtin="shell_olp_set_backmode">manual</ACTION>  				
+ 		</COMMAND>
+
+		<COMMAND name="set switch-rule"
+			help="Set OLP switch rule"/>
+
+        <COMMAND name="set switch-rule working-fiber"
+			help="Set OLP switch rule to working fiber first">
+			<ACTION  builtin="shell_olp_set_switchrule">working</ACTION>  			
+ 		</COMMAND>
+
+  		<COMMAND name="set switch-rule highpower-fiber"
+			help="Set OLP switch rule to high power fiber first">
+			<ACTION  builtin="shell_olp_set_switchrule">highpower</ACTION>  			
+ 		</COMMAND> 	
+
+		<COMMAND name="set r1-wavelength"
+			help="Set OLP wavelength"/>
+
+        <COMMAND name="set r1-wavelength 1310"
+			help="Set OLP wavelength to 1310">
+			<ACTION  builtin="shell_olp_set_wavelength">1 working</ACTION>  			
+ 		</COMMAND>
+
+  		<COMMAND name="set r1-wavelength 1550"
+			help="Set OLP wavelength to 1550">
+			<ACTION  builtin="shell_olp_set_wavelength">1 highpower</ACTION>  			
+ 		</COMMAND> 
+
+		<COMMAND name="set r2-wavelength"
+			help="Set OLP wavelength"/>
+
+        <COMMAND name="set r2-wavelength 1310"
+			help="Set OLP wavelength to 1310">
+			<ACTION  builtin="shell_olp_set_wavelength">2 working</ACTION>  			
+ 		</COMMAND>
+
+  		<COMMAND name="set r2-wavelength 1550"
+			help="Set OLP wavelength to 1550">
+			<ACTION  builtin="shell_olp_set_wavelength">2 highpower</ACTION>  			
+ 		</COMMAND> 
+
+		<COMMAND name="set tx-wavelength"
+			help="Set OLP wavelength"/>
+
+        <COMMAND name="set tx-wavelength 1310"
+			help="Set OLP wavelength to 1310">
+			<ACTION  builtin="shell_olp_set_wavelength">3 working</ACTION>  			
+ 		</COMMAND>
+
+  		<COMMAND name="set tx-wavelength 1550"
+			help="Set OLP wavelength to 1550">
+			<ACTION  builtin="shell_olp_set_wavelength">3 highpower</ACTION>  			
+ 		</COMMAND> 
+ 		
+
+  		<COMMAND name="set r1-power"
+			help="Set R1 switch Optical power">
+    		<PARAM name="value"
+                   help="The value(-50.0   10.0)"
+                   ptype="VISINTFLOAT"/>  
+		    <ACTION  builtin="shell_olp_set_r1power">${value}</ACTION>  	
+		</COMMAND>
+ 		
+  		<COMMAND name="set r2-power"
+			help="Set R2 switch Optical power">
+			<PARAM name="value"
+                   help="The value(-50.0   10.0)"
+                   ptype="VISINTFLOAT"/>  
+		    <ACTION  builtin="shell_olp_set_r2power">${value}</ACTION>  	                   
+ 		</COMMAND> 		
+
+ 		<COMMAND name="set tx-power"
+			help="Set TX alarm optical power">
+			<PARAM name="value"
+                   help="The value(-50.0   10.0)"
+                   ptype="VISINTFLOAT"/>  
+		    <ACTION  builtin="shell_olp_set_txpower">${value}</ACTION>  		                   
+ 		</COMMAND> 		
+
+  		<COMMAND name="set return-time"
+			help="Set OLP return time">
+			<PARAM name="value"
+                   help="The value"
+                   ptype="RETUNT"/>  
+		    <ACTION  builtin="shell_olp_set_backtime">${value}</ACTION>  	                   
+ 		</COMMAND> 		
+    
+-->        
+        <COMMAND name="exit"
+                 help="Exit the named view"
+                 view="enable-view"/>
+    </VIEW>
+</CLISH_MODULE>

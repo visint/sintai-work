@@ -1,0 +1,21 @@
+clish/var/libclish_la-var_dump.lo: clish/var/var_dump.c lub/dump.h \
+ /home/bobo/buildroot-2012.08/output/host/usr/lib/gcc/arm-unknown-linux-uclibcgnueabi/4.5.4/include/stdarg.h \
+ clish/action.h lub/bintree.h \
+ /home/bobo/buildroot-2012.08/output/host/usr/lib/gcc/arm-unknown-linux-uclibcgnueabi/4.5.4/include/stddef.h \
+ clish/var/private.h clish/var.h lub/types.h
+
+lub/dump.h:
+
+/home/bobo/buildroot-2012.08/output/host/usr/lib/gcc/arm-unknown-linux-uclibcgnueabi/4.5.4/include/stdarg.h:
+
+clish/action.h:
+
+lub/bintree.h:
+
+/home/bobo/buildroot-2012.08/output/host/usr/lib/gcc/arm-unknown-linux-uclibcgnueabi/4.5.4/include/stddef.h:
+
+clish/var/private.h:
+
+clish/var.h:
+
+lub/types.h:

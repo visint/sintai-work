@@ -1,0 +1,10 @@
+lub/bintree/bintree_iterator_previous.lo: \
+ lub/bintree/bintree_iterator_previous.c lub/bintree/private.h \
+ lub/bintree.h \
+ /home/bobo/buildroot-2012.08/output/host/usr/lib/gcc/arm-unknown-linux-uclibcgnueabi/4.5.4/include/stddef.h
+
+lub/bintree/private.h:
+
+lub/bintree.h:
+
+/home/bobo/buildroot-2012.08/output/host/usr/lib/gcc/arm-unknown-linux-uclibcgnueabi/4.5.4/include/stddef.h:
