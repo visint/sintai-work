@@ -198,9 +198,9 @@ int getUserLevel(char* user, char *pass)
 
 
 
-    if(strcmp(user,"visint2013")== 0)
+    if(strcmp(user,"sintai")== 0)
     {
-        if(strcmp(pass,"gzvisint")== 0)
+        if(strcmp(pass,"sintai")== 0)
         {
             return 3;
         }
